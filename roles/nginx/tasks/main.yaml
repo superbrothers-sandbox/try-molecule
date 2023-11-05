@@ -1,0 +1,14 @@
+- name: Install nginx
+  ansible.builtin.apt:
+    name: nginx
+    state: present
+    update_cache: true
+
+- name: Install index.html to /var/www.html
+  ansible.builtin.copy:
+    src: var/www/html/index.html
+    dest: /var/www/html/index.html
+    owner: root
+    group: root
+    mode: 0755
+  notify: Restart nginx

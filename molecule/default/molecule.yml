@@ -1,6 +1,15 @@
 ---
 driver:
   name: docker
+provisioner:
+  name: ansible
+  env:
+    ANSIBLE_ROLES_PATH: "../../roles"
+  inventory:
+    hosts:
+      nginx:
+        hosts:
+          molecule-ubuntu:
 platforms:
 - name: molecule-ubuntu
   image: ubuntu:22.04
