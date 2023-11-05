@@ -10,6 +10,8 @@ provisioner:
       nginx:
         hosts:
           molecule-ubuntu:
+verifier:
+  name: testinfra
 platforms:
 - name: molecule-ubuntu
   image: ubuntu:22.04
