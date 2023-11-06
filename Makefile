@@ -1,4 +1,4 @@
-DOCKER_RUN ?= docker run -v ./:/work -w /work -v /var/run/docker.sock:/var/run/docker.sock:ro -e PYTHONDONTWRITEBYTECODE=1
+DOCKER_RUN ?= docker run -v ./:/work -w /work -v /var/run/docker.sock:/var/run/docker.sock:ro -v /sys/fs/cgroup:/sys/fs/cgroup:rw -e PYTHONDONTWRITEBYTECODE=1
 
 .PHONY: build
 build:
